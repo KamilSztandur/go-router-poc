@@ -6,20 +6,12 @@ import 'package:maat_router_poc/features/items/item_page.dart';
 import 'package:maat_router_poc/features/items/items_page.dart';
 import 'package:maat_router_poc/features/settings/settings_page.dart';
 import 'package:maat_router_poc/router/app_shell.dart';
+import 'package:maat_router_poc/router/router.dart';
 
 part 'branches/home.dart';
 part 'branches/items.dart';
 part 'branches/settings.dart';
 part 'routes.g.dart';
-
-final navigatorKeys = (
-  root: GlobalKey<NavigatorState>(),
-  branches: (
-    home: GlobalKey<NavigatorState>(),
-    years: GlobalKey<NavigatorState>(),
-    settings: GlobalKey<NavigatorState>(),
-  ),
-);
 
 @TypedShellRoute<RootRoute>(
   routes: [

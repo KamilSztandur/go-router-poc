@@ -8,11 +8,18 @@ import 'package:provider/provider.dart';
 import 'redirections.dart';
 import 'routes.dart';
 
-class _CubitNotifier extends ChangeNotifier {
-  _CubitNotifier(this._cubit) {
-    _cubit.stream.listen((state) {
-      notifyListeners();
-    });
+final navigatorKeys = (
+  root: GlobalKey<NavigatorState>(),
+  branches: (
+    home: GlobalKey<NavigatorState>(),
+    years: GlobalKey<NavigatorState>(),
+    settings: GlobalKey<NavigatorState>(),
+  ),
+);
+
+class _AuthCubitNotifier extends ChangeNotifier {
+  _AuthCubitNotifier(this._cubit) {
+    _cubit.stream.listen((state) => notifyListeners());
   }
 
   final AuthCubit _cubit;
@@ -21,7 +28,7 @@ class _CubitNotifier extends ChangeNotifier {
 }
 
 GoRouter createGoRouter(BuildContext context) {
-  final authCubit = context.watch<AuthCubit>();
+  final authCubit = context.read<AuthCubit>();
 
   return GoRouter(
     navigatorKey: navigatorKeys.root,
@@ -34,7 +41,7 @@ GoRouter createGoRouter(BuildContext context) {
       state.uri.toString(),
       queryParams: state.uri.queryParameters,
     ),
-    refreshListenable: _CubitNotifier(authCubit),
+    refreshListenable: _AuthCubitNotifier(authCubit),
   );
 }
 
