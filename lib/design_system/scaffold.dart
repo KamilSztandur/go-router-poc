@@ -17,7 +17,7 @@ class MaatScaffold extends HookWidget {
 
     final scrollController = useScrollController();
 
-    // ignore: use_design_system_item_AppScaffold
+    // ignore: use_design_system_item_MaatScaffold
     return Scaffold(
       body: CustomScrollView(
         controller: scrollController,

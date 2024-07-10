@@ -1,10 +1,10 @@
 import 'package:flutter/widgets.dart';
-import 'package:maat_router_poc/router/page_ids.dart';
 import 'package:maat_router_poc/router/router.dart';
+import 'package:maat_router_poc/router/routes/page/page_ids.dart';
 import 'package:provider/provider.dart';
 
-abstract class AppPage extends Page<void> {
-  const AppPage({
+abstract class MaatPage extends Page<void> {
+  const MaatPage({
     required this.pageId,
     required this.builder,
     this.transparentBackground = false,

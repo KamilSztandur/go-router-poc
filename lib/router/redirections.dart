@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maat_router_poc/features/auth/cubits/auth_cubit.dart';
-import 'package:maat_router_poc/router/routes.dart';
+import 'package:maat_router_poc/router/routes/routes.dart';
 import 'package:provider/provider.dart';
 
 typedef Redirection = String? Function(

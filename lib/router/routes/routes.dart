@@ -5,8 +5,8 @@ import 'package:maat_router_poc/features/home/home_page.dart';
 import 'package:maat_router_poc/features/items/item_page.dart';
 import 'package:maat_router_poc/features/items/items_page.dart';
 import 'package:maat_router_poc/features/settings/settings_page.dart';
-import 'package:maat_router_poc/router/app_shell.dart';
 import 'package:maat_router_poc/router/router.dart';
+import 'package:maat_router_poc/router/routes/page/app_shell.dart';
 
 part 'branches/home.dart';
 part 'branches/items.dart';
@@ -59,7 +59,7 @@ class MainRoute extends StatefulShellRouteData {
     GoRouterState state,
     StatefulNavigationShell navigationShell,
   ) {
-    return AppShell(
+    return MaatShell(
       routerState: state,
       navigationShell: navigationShell,
     );

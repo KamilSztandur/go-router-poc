@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:maat_router_poc/features/auth/cubits/auth_cubit.dart';
 
-class AppGlobalProviders extends StatelessWidget {
-  const AppGlobalProviders({
+class MaatGlobalProviders extends StatelessWidget {
+  const MaatGlobalProviders({
     super.key,
     required this.child,
   });

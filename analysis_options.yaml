@@ -3,7 +3,7 @@ include: package:leancode_lint/analysis_options.yaml
 custom_lint:
   rules:
     - use_design_system_item:
-      AppScaffold:
+      MaatScaffold:
         - instead_of: Scaffold
           from_package: flutter
 

@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:maat_router_poc/design_system/scaffold.dart';
 import 'package:maat_router_poc/features/auth/cubits/auth_cubit.dart';
-import 'package:maat_router_poc/router/app_page.dart';
-import 'package:maat_router_poc/router/page_ids.dart';
-import 'package:maat_router_poc/router/routes.dart';
+import 'package:maat_router_poc/router/routes/page/app_page.dart';
+import 'package:maat_router_poc/router/routes/page/page_ids.dart';
+import 'package:maat_router_poc/router/routes/routes.dart';
 
-class SignInPage extends AppPage {
+class SignInPage extends MaatPage {
   SignInPage()
       : super(
           pageId: PageId.signIn,

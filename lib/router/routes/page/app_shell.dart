@@ -3,8 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 
-class AppShell extends StatelessWidget {
-  const AppShell({
+class MaatShell extends StatelessWidget {
+  const MaatShell({
     super.key,
     required this.routerState,
     required this.navigationShell,
@@ -51,7 +51,7 @@ class AppShell extends StatelessWidget {
         statusBarIconBrightness: Brightness.dark,
         systemNavigationBarIconBrightness: Brightness.dark,
       ),
-      // ignore: use_design_system_item_AppScaffold
+      // ignore: use_design_system_item_MaatScaffold
       child: Scaffold(
         bottomNavigationBar: NavigationBar(
           destinations: destinations,

@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:maat_router_poc/features/auth/cubits/auth_cubit.dart';
-import 'package:maat_router_poc/router/page_ids.dart';
+import 'package:maat_router_poc/router/redirections.dart';
+import 'package:maat_router_poc/router/routes/page/page_ids.dart';
+import 'package:maat_router_poc/router/routes/routes.dart';
 import 'package:provider/provider.dart';
-
-import 'redirections.dart';
-import 'routes.dart';
 
 final navigatorKeys = (
   root: GlobalKey<NavigatorState>(),

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:maat_router_poc/design_system/scaffold.dart';
-import 'package:maat_router_poc/router/app_page.dart';
-import 'package:maat_router_poc/router/page_ids.dart';
-import 'package:maat_router_poc/router/routes.dart';
+import 'package:maat_router_poc/router/routes/page/app_page.dart';
+import 'package:maat_router_poc/router/routes/page/page_ids.dart';
+import 'package:maat_router_poc/router/routes/routes.dart';
 
-class ItemsPage extends AppPage {
+class ItemsPage extends MaatPage {
   ItemsPage()
       : super(
           pageId: PageId.items,

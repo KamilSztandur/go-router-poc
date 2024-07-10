@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:maat_router_poc/design_system/scaffold.dart';
 import 'package:maat_router_poc/features/auth/cubits/auth_cubit.dart';
-import 'package:maat_router_poc/router/app_page.dart';
-import 'package:maat_router_poc/router/page_ids.dart';
+import 'package:maat_router_poc/router/routes/page/app_page.dart';
+import 'package:maat_router_poc/router/routes/page/page_ids.dart';
 
-class SettingsPage extends AppPage {
+class SettingsPage extends MaatPage {
   SettingsPage()
       : super(
           pageId: PageId.settings,

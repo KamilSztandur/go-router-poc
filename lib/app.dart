@@ -1,23 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:maat_router_poc/global_providers.dart';
 import 'package:maat_router_poc/router/router.dart';
 
-class App extends StatelessWidget {
-  const App({
+class MaatApp extends StatelessWidget {
+  const MaatApp({
     super.key,
   });
-
-  @override
-  Widget build(BuildContext context) {
-    return const AppGlobalProviders(
-      child: _App(),
-    );
-  }
-}
-
-class _App extends HookWidget {
-  const _App();
 
   @override
   Widget build(BuildContext context) {
