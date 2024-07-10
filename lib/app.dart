@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:maat_router_poc/router/router.dart';
 
-class MaatApp extends StatelessWidget {
+class MaatApp extends HookWidget {
   const MaatApp({
     super.key,
   });
