@@ -13,6 +13,6 @@ class SettingsRoute extends GoRouteData {
 
   @override
   Page<void> buildPage(BuildContext context, GoRouterState state) {
-    return const SettingsPage();
+    return SettingsPage();
   }
 }

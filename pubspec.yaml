@@ -33,8 +33,3 @@ flutter_gen:
 flutter:
   uses-material-design: true
   generate: true
-
-  fonts:
-    - family: RobotoFlex
-      fonts:
-        - asset: assets/fonts/RobotoFlex.ttf

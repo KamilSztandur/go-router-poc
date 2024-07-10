@@ -7,51 +7,81 @@ part of 'routes.dart';
 // **************************************************************************
 
 List<RouteBase> get $appRoutes => [
-      $mainRoute,
+      $rootRoute,
     ];
 
-RouteBase get $mainRoute => StatefulShellRouteData.$route(
-      factory: $MainRouteExtension._fromState,
-      branches: [
-        StatefulShellBranchData.$branch(
-          navigatorKey: HomeBranch.$navigatorKey,
-          routes: [
-            GoRouteData.$route(
-              path: '/home',
-              parentNavigatorKey: HomeRoute.$parentNavigatorKey,
-              factory: $HomeRouteExtension._fromState,
-            ),
-          ],
+RouteBase get $rootRoute => ShellRouteData.$route(
+      factory: $RootRouteExtension._fromState,
+      routes: [
+        GoRouteData.$route(
+          path: '/sign-in',
+          factory: $SignInRouteExtension._fromState,
         ),
-        StatefulShellBranchData.$branch(
-          navigatorKey: ItemsBranch.$navigatorKey,
-          routes: [
-            GoRouteData.$route(
-              path: '/items',
-              parentNavigatorKey: ItemsRoute.$parentNavigatorKey,
-              factory: $ItemsRouteExtension._fromState,
+        StatefulShellRouteData.$route(
+          factory: $MainRouteExtension._fromState,
+          branches: [
+            StatefulShellBranchData.$branch(
+              navigatorKey: HomeBranch.$navigatorKey,
               routes: [
                 GoRouteData.$route(
-                  path: ':item',
-                  parentNavigatorKey: ItemRoute.$parentNavigatorKey,
-                  factory: $ItemRouteExtension._fromState,
+                  path: '/home',
+                  parentNavigatorKey: HomeRoute.$parentNavigatorKey,
+                  factory: $HomeRouteExtension._fromState,
+                ),
+              ],
+            ),
+            StatefulShellBranchData.$branch(
+              navigatorKey: ItemsBranch.$navigatorKey,
+              routes: [
+                GoRouteData.$route(
+                  path: '/items',
+                  parentNavigatorKey: ItemsRoute.$parentNavigatorKey,
+                  factory: $ItemsRouteExtension._fromState,
+                  routes: [
+                    GoRouteData.$route(
+                      path: ':item',
+                      parentNavigatorKey: ItemRoute.$parentNavigatorKey,
+                      factory: $ItemRouteExtension._fromState,
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            StatefulShellBranchData.$branch(
+              navigatorKey: SettingsBranch.$navigatorKey,
+              routes: [
+                GoRouteData.$route(
+                  path: '/settings',
+                  parentNavigatorKey: SettingsRoute.$parentNavigatorKey,
+                  factory: $SettingsRouteExtension._fromState,
                 ),
               ],
             ),
           ],
         ),
-        StatefulShellBranchData.$branch(
-          navigatorKey: SettingsBranch.$navigatorKey,
-          routes: [
-            GoRouteData.$route(
-              path: '/settings',
-              parentNavigatorKey: SettingsRoute.$parentNavigatorKey,
-              factory: $SettingsRouteExtension._fromState,
-            ),
-          ],
-        ),
       ],
     );
+
+extension $RootRouteExtension on RootRoute {
+  static RootRoute _fromState(GoRouterState state) => RootRoute();
+}
+
+extension $SignInRouteExtension on SignInRoute {
+  static SignInRoute _fromState(GoRouterState state) => SignInRoute();
+
+  String get location => GoRouteData.$location(
+        '/sign-in',
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
+}
 
 extension $MainRouteExtension on MainRoute {
   static MainRoute _fromState(GoRouterState state) => const MainRoute();

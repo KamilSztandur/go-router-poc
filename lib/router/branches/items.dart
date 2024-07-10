@@ -13,7 +13,7 @@ class ItemsRoute extends GoRouteData {
 
   @override
   Page<void> buildPage(BuildContext context, GoRouterState state) {
-    return const ItemsPage();
+    return ItemsPage();
   }
 }
 

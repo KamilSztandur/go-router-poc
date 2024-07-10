@@ -13,6 +13,6 @@ class HomeRoute extends GoRouteData {
 
   @override
   Page<void> buildPage(BuildContext context, GoRouterState state) {
-    return const HomePage();
+    return HomePage();
   }
 }

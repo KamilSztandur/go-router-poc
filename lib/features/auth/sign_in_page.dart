@@ -4,11 +4,12 @@ import 'package:maat_router_poc/design_system/scaffold.dart';
 import 'package:maat_router_poc/features/auth/cubits/auth_cubit.dart';
 import 'package:maat_router_poc/router/app_page.dart';
 import 'package:maat_router_poc/router/page_ids.dart';
+import 'package:maat_router_poc/router/routes.dart';
 
-class SettingsPage extends AppPage {
-  SettingsPage()
+class SignInPage extends AppPage {
+  SignInPage()
       : super(
-          pageId: PageId.settings,
+          pageId: PageId.signIn,
           builder: (context) => const SettingsScreen(),
         );
 }
@@ -21,21 +22,35 @@ class SettingsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaatScaffold(
-      title: 'Settings',
+      title: 'Sign in',
       bodySlivers: [
         const SliverPadding(
-          padding: EdgeInsets.all(16),
+          padding: EdgeInsets.symmetric(horizontal: 16),
           sliver: SliverToBoxAdapter(
-            child: Text('This is example setting spage'),
+            child: Text(
+              'Tap the button below to sign in',
+              textAlign: TextAlign.center,
+            ),
           ),
         ),
+        const SliverToBoxAdapter(child: SizedBox(height: 16)),
         SliverToBoxAdapter(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: ElevatedButton(
-              onPressed: context.read<AuthCubit>().signOut,
+              onPressed: context.read<AuthCubit>().signIn,
+              child: const Text('Sign in'),
+            ),
+          ),
+        ),
+        const SliverToBoxAdapter(child: SizedBox(height: 16)),
+        SliverToBoxAdapter(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: ElevatedButton(
+              onPressed: () => const HomeRoute().go(context),
               child: const Text(
-                'Sign out',
+                'Try to access home page',
               ),
             ),
           ),

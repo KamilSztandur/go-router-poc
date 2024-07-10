@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:maat_router_poc/features/auth/cubits/auth_cubit.dart';
 
 class AppGlobalProviders extends StatelessWidget {
   const AppGlobalProviders({
@@ -11,10 +12,8 @@ class AppGlobalProviders extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        Provider(create: (context) => ThemeData.light()), // TODO
-      ],
+    return BlocProvider(
+      create: (context) => AuthCubit(),
       child: child,
     );
   }

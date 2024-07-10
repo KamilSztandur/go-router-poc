@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:maat_router_poc/design_system/scaffold.dart';
+import 'package:maat_router_poc/router/app_page.dart';
+import 'package:maat_router_poc/router/page_ids.dart';
 
-class ItemPage extends MaterialPage<void> {
+class ItemPage extends AppPage {
   ItemPage({
     required String item,
-  }) : super(child: ItemScreen(item: item));
+  }) : super(
+          pageId: PageId.item,
+          builder: (context) => ItemScreen(item: item),
+        );
 }
 
 class ItemScreen extends StatelessWidget {

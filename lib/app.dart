@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:maat_router_poc/router/routes.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:maat_router_poc/global_providers.dart';
+import 'package:maat_router_poc/router/router.dart';
 
 class App extends StatelessWidget {
   const App({
@@ -8,9 +10,24 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return const AppGlobalProviders(
+      child: _App(),
+    );
+  }
+}
+
+class _App extends HookWidget {
+  const _App();
+
+  @override
+  Widget build(BuildContext context) {
+    final router = useMemoized(
+      () => createGoRouter(context),
+    );
+
     return MaterialApp.router(
-      theme: ThemeData.light(),
       routerConfig: router,
+      theme: ThemeData.light(),
     );
   }
 }
