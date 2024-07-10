@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:maat_router_poc/features/auth/sign_in_page.dart';
@@ -45,7 +47,7 @@ part 'routes.g.dart';
 class RootRoute extends ShellRouteData {
   @override
   Widget builder(BuildContext context, GoRouterState state, Widget navigator) {
-    // TODO: Here you put widgets like AppInteractionBlocker
+    // TODO: Here you put wrappers like AppInteractionBlocker
     return navigator;
   }
 }
@@ -72,4 +74,15 @@ class SignInRoute extends GoRouteData {
   @override
   Page<void> buildPage(BuildContext context, GoRouterState state) =>
       SignInPage();
+
+  @override
+  FutureOr<String?> redirect(BuildContext context, GoRouterState state) {
+    // TODO: You can perform some local redirection here
+    // final onboardingCubit = context.read<OnboardingCubit>();
+    // if (onboardingCubit.state is OnboardingState) {
+    //   return const OnboardingRoute().location;
+    // }
+
+    return super.redirect(context, state);
+  }
 }

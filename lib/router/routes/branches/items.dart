@@ -12,9 +12,8 @@ class ItemsRoute extends GoRouteData {
   static final $parentNavigatorKey = ItemsBranch.$navigatorKey;
 
   @override
-  Page<void> buildPage(BuildContext context, GoRouterState state) {
-    return ItemsPage();
-  }
+  Page<void> buildPage(BuildContext context, GoRouterState state) =>
+      ItemsPage();
 }
 
 class ItemRoute extends GoRouteData {
@@ -27,7 +26,6 @@ class ItemRoute extends GoRouteData {
   static final $parentNavigatorKey = ItemsBranch.$navigatorKey;
 
   @override
-  Page<void> buildPage(BuildContext context, GoRouterState state) {
-    return ItemPage(item: item);
-  }
+  Page<void> buildPage(BuildContext context, GoRouterState state) =>
+      ItemPage(item: item);
 }
